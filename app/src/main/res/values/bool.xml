@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ bool.xml - app
+  ~ Created by iamlordalvarado on 5/26/20 3:49 PM
+  ~ Copyright (c) 2020 . All rights reserved.
+  ~ Last modified 5/26/20 3:49 PM
+  -->
+
+<resources>
+    <bool name="lightStatusBar">true</bool>
+</resources>

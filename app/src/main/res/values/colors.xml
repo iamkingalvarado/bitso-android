@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">@color/bitsoWhite</color>
+    <color name="colorAccent">@color/bitsoGreen</color>
+
+    <color name="bitsoWhite">#F9F9F9</color>
+    <color name="bitsoGreen">#4ebc42</color>
+    <color name="systemBackground">#F7F7F7</color>
+    <color name="systemFill">#FFFFFF</color>
 </resources>
