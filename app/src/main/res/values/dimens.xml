@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ dimens.xml - app
+  ~ Created by iamlordalvarado on 5/26/20 4:27 PM
+  ~ Copyright (c) 2020 . All rights reserved.
+  ~ Last modified 5/26/20 4:27 PM
+  -->
+
+<resources>
+    <dimen name="marginSmall">8dp</dimen>
+    <dimen name="marginNormal">12dp</dimen>
+    <dimen name="radiusSmall">4dp</dimen>
+</resources>

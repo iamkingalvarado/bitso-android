@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ item_available_book.xml - app
+  ~ Created by iamlordalvarado on 5/26/20 4:36 PM
+  ~ Copyright (c) 2020 . All rights reserved.
+  ~ Last modified 5/26/20 4:36 PM
+  -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/marginNormal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_item_book"
+        android:paddingTop="@dimen/marginNormal"
+        android:paddingEnd="@dimen/marginNormal"
+        android:paddingBottom="@dimen/marginNormal"
+        tools:ignore="RtlSymmetry">
+
+        <View
+            android:id="@+id/itemAvailableBookColorLayout"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:background="@color/bitsoGreen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/itemAvailableBookLastPrice"
+            style="@style/Bitso.TextAppearance.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$1,0000" />
+
+        <TextView
+            android:id="@+id/itemAvailableBookNameTextView"
+            style="@style/Bitso.TextAppearance.Subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginNormal"
+            android:layout_marginEnd="@dimen/marginNormal"
+            app:layout_constraintBottom_toTopOf="@+id/itemAvailableBookDateTextView"
+            app:layout_constraintEnd_toStartOf="@id/itemAvailableBookLastPrice"
+            app:layout_constraintStart_toEndOf="@id/itemAvailableBookColorLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="BTC/MXN" />
+
+        <TextView
+            android:id="@+id/itemAvailableBookDateTextView"
+            style="@style/Bitso.TextAppearance.FootNote.Book"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginNormal"
+            android:layout_marginEnd="@dimen/marginNormal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/itemAvailableBookLastPrice"
+            app:layout_constraintStart_toEndOf="@id/itemAvailableBookColorLayout"
+            app:layout_constraintTop_toBottomOf="@+id/itemAvailableBookNameTextView"
+            tools:text="2020-04-05 12:30" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

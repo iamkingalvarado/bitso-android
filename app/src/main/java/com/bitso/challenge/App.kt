@@ -8,11 +8,13 @@
 package com.bitso.challenge
 
 import android.app.Application
+import com.bitso.challenge.features.list.di.modules.AvailableBooksModule
 import com.bitso.challenge.features.splash.di.modules.SplashModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
 
+@Suppress("unused")
 class App : Application() {
 
     override fun onCreate() {
@@ -27,7 +29,10 @@ class App : Application() {
         }
 
         loadKoinModules(
-            SplashModule.module
+            arrayListOf(
+                SplashModule.module,
+                AvailableBooksModule.module
+            )
         )
     }
 }
