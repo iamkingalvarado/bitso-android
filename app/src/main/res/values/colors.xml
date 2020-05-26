@@ -8,4 +8,5 @@
     <color name="bitsoGreen">#4ebc42</color>
     <color name="systemBackground">#F7F7F7</color>
     <color name="systemFill">#FFFFFF</color>
+    <color name="label">#00141E</color>
 </resources>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Bitso</string>
+    <string name="act_available_books_error">Something went wrong, you can tap anywhere to retry</string>
+    <string name="act_available_books_retry">Retry</string>
 </resources>
