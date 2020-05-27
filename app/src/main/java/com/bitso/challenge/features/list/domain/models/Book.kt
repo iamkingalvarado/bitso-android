@@ -7,10 +7,10 @@
 
 package com.bitso.challenge.features.list.domain.models
 
-import java.util.*
+import org.threeten.bp.OffsetDateTime
 
 data class Book(
     val name: String,
-    val lastPrice: Double,
-    val createdAt: Date
+    var createdAt: OffsetDateTime? = null,
+    var lastPrice: Double = 0.0
 )

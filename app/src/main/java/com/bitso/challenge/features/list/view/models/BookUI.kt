@@ -10,6 +10,6 @@ package com.bitso.challenge.features.list.view.models
 data class BookUI(
     val name: String,
     val lastPrice: String,
-    val date: String,
+    val date: String?,
     val hexColor: String
 )

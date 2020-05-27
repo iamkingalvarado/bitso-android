@@ -14,4 +14,8 @@ abstract class Mapper<T, R> {
     fun mapList(from: List<T>): List<R> {
         return from.map { map(it) }
     }
+
+    open fun mapReverse(from: R): T {
+        throw UnsupportedOperationException("mapReverse method was not overwritten")
+    }
 }
