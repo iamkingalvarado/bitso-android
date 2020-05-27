@@ -28,9 +28,16 @@
 
         <include layout="@layout/layout_loading_and_error" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/availableBooksRecyclerView"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/availableBooksRefreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/availableBooksRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

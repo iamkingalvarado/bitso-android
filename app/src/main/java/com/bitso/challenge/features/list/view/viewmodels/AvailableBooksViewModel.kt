@@ -17,13 +17,20 @@ import com.bitso.challenge.features.list.domain.usecases.GetAvailableBooksUseCas
 import com.bitso.challenge.features.list.view.mappers.BooksUIMapper
 import com.bitso.challenge.features.list.view.models.BookUI
 import com.bitso.challenge.features.list.view.views.AvailableBooksView
+import kotlinx.coroutines.launch
 import java.lang.ref.WeakReference
+import java.util.*
 
 class AvailableBooksViewModel(
     private val useCase: GetAvailableBooksUseCase,
     private val booksUIMapper: Mapper<Book, BookUI> = BooksUIMapper()
 ) : ViewModel() {
 
+    companion object {
+        private const val UPDATE_SECONDS_PERIOD = 30 * 1000L
+    }
+
+    private var timer: Timer? = null
     private var view: WeakReference<AvailableBooksView>? = null
 
     fun setView(view: AvailableBooksView) {
@@ -31,9 +38,21 @@ class AvailableBooksViewModel(
     }
 
     fun loadBooks() {
+        checkIfNotTimerInitialized()
         this.view.unwrap { it.showLoading() }
         this.useCase.invoke(viewModelScope, null, delayMillis = 800) {
             it.either(::handleError, ::handleSuccess)
+        }
+    }
+
+    private fun checkIfNotTimerInitialized() {
+        if (timer == null) {
+            timer = Timer()
+            timer?.scheduleAtFixedRate(object : TimerTask() {
+                override fun run() {
+                    viewModelScope.launch { loadBooks() }
+                }
+            }, 300, UPDATE_SECONDS_PERIOD)
         }
     }
 
@@ -48,6 +67,12 @@ class AvailableBooksViewModel(
     private fun handleError(failure: Failure) {
         failure.printStackTrace()
         this.view.unwrap { it.showError() }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        timer?.cancel()
+        timer = null
     }
 
 }

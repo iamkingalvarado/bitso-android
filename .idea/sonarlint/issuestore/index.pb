@@ -31,8 +31,6 @@ Qapp/src/main/java/com/bitso/challenge/features/list/view/mappers/BooksUIMapper.
 ]app/src/main/java/com/bitso/challenge/features/list/view/activities/AvailableBooksActivity.kt,3/2/32f63bb51e848ef8cd432c28deb36e46d68484b0
 Ž
 ^app/src/main/java/com/bitso/challenge/features/list/view/viewmodels/AvailableBooksViewModel.kt,5/a/5af8259a9979419e504be76e5a92b3e454cf503c
-[
-+app/src/main/res/layout/activity_splash.xml,1/3/13b26b9b6631cddf289c5ab7c4e546a180da97d8
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ colors.xml - app
+  ~ Created by iamlordalvarado on 5/27/20 2:05 PM
+  ~ Copyright (c) 2020 . All rights reserved.
+  ~ Last modified 5/27/20 1:54 PM
+  -->
+
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">@color/bitsoBlack</color>
+    <color name="colorAccent">@color/bitsoGreen</color>
+
+    <color name="bitsoWhite">#F9F9F9</color>
+    <color name="bitsoGreen">#4ebc42</color>
+    <color name="systemBackground">#13171A</color>
+    <color name="systemFill">#191F21</color>
+    <color name="label">#F7F7F7</color>
+    <color name="label50">#80F7F7F7</color>
+    <color name="bitsoBlack">#000</color>
+</resources>
