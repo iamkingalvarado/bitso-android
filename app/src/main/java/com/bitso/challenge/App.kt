@@ -8,6 +8,7 @@
 package com.bitso.challenge
 
 import android.app.Application
+import com.bitso.challenge.features.detail.di.modules.BookDetailModule
 import com.bitso.challenge.features.list.di.modules.AvailableBooksModule
 import com.bitso.challenge.features.splash.di.modules.SplashModule
 import com.bitso.challenge.network.di.modules.NetworkModule
@@ -33,7 +34,8 @@ class App : Application() {
             arrayListOf(
                 NetworkModule.module(BuildConfig.API_URL, BuildConfig.DEBUG),
                 SplashModule.module,
-                AvailableBooksModule.module
+                AvailableBooksModule.module,
+                BookDetailModule.module
             )
         )
     }

@@ -9,4 +9,5 @@
     <color name="systemBackground">#F7F7F7</color>
     <color name="systemFill">#FFFFFF</color>
     <color name="label">#00141E</color>
+    <color name="label50">#8000141E</color>
 </resources>

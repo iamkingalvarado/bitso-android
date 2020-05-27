@@ -16,3 +16,7 @@ inline fun <reified T : AppCompatActivity> AppCompatActivity.showAsRoot() {
     })
     finishAndRemoveTask()
 }
+
+inline fun <reified T : AppCompatActivity> AppCompatActivity.show(block: ((extras: Intent) -> Unit) = {}) {
+    startActivity(Intent(this, T::class.java).apply(block))
+}

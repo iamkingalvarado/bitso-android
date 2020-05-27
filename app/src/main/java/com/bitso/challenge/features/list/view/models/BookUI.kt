@@ -7,9 +7,12 @@
 
 package com.bitso.challenge.features.list.view.models
 
+import java.io.Serializable
+
 data class BookUI(
+    val id: String,
     val name: String,
     val lastPrice: String,
     val date: String?,
     val hexColor: String
-)
+) : Serializable

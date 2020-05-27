@@ -14,16 +14,19 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bitso.challenge.R
+import com.bitso.challenge.features.list.view.listeners.OnBookClickListener
 import com.bitso.challenge.features.list.view.models.BookUI
 
-class BooksAdapter : RecyclerView.Adapter<BooksAdapter.BooksViewHolder>() {
+class BooksAdapter(
+    private val clickListener: OnBookClickListener
+) : RecyclerView.Adapter<BooksAdapter.BooksViewHolder>() {
 
     private var books: List<BookUI> = arrayListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BooksViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_available_book, parent, false)
-        return BooksViewHolder(view)
+        return BooksViewHolder(view, clickListener)
     }
 
     override fun getItemCount(): Int = books.size
@@ -37,7 +40,10 @@ class BooksAdapter : RecyclerView.Adapter<BooksAdapter.BooksViewHolder>() {
         notifyDataSetChanged()
     }
 
-    class BooksViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class BooksViewHolder(
+        itemView: View,
+        clickListener: OnBookClickListener
+    ) : RecyclerView.ViewHolder(itemView) {
 
         private val itemAvailableBookNameTextView =
             itemView.findViewById<TextView>(R.id.itemAvailableBookNameTextView)
@@ -48,7 +54,12 @@ class BooksAdapter : RecyclerView.Adapter<BooksAdapter.BooksViewHolder>() {
         private val itemAvailableBookColorLayout =
             itemView.findViewById<View>(R.id.itemAvailableBookColorLayout)
 
+        init {
+            itemView.setOnClickListener { clickListener.onBookSelected(itemView.tag as BookUI) }
+        }
+
         fun bind(bookUI: BookUI) {
+            itemView.tag = bookUI
             itemAvailableBookNameTextView.text = bookUI.name
             itemAvailableBookDateTextView.text = bookUI.date
             itemAvailableBookLastPrice.text = bookUI.lastPrice

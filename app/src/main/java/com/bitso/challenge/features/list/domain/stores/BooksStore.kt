@@ -12,6 +12,7 @@ import com.bitso.challenge.features.list.domain.models.Book
 import com.bitso.challenge.features.list.domain.models.Ticker
 
 class FetchBooksException : Failure()
+class FetchTickerException : Failure()
 
 interface BooksStore {
     suspend fun fetchBooks(): List<Book>
