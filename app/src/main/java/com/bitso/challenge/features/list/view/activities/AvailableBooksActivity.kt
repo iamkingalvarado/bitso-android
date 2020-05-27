@@ -39,12 +39,14 @@ class AvailableBooksActivity : AppCompatActivity(), AvailableBooksView {
     }
 
     override fun showLoading() {
+        availableBooksRefreshLayout.isRefreshing = false
         availableBooksRecyclerView.visibility = View.GONE
         errorFailureLayout.visibility = View.GONE
         loadingProgressBar.visibility = View.VISIBLE
     }
 
     override fun hideLoading() {
+        availableBooksRefreshLayout.isRefreshing = false
         availableBooksRecyclerView.visibility = View.GONE
         errorFailureLayout.visibility = View.GONE
         loadingProgressBar.visibility = View.GONE
@@ -61,6 +63,9 @@ class AvailableBooksActivity : AppCompatActivity(), AvailableBooksView {
 
     private fun setupViews() {
         errorRetryButton.setOnClickListener {
+            availableBooksViewModel.loadBooks()
+        }
+        availableBooksRefreshLayout.setOnRefreshListener {
             availableBooksViewModel.loadBooks()
         }
         availableBooksRecyclerView.layoutManager =
