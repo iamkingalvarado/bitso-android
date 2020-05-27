@@ -39,4 +39,19 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="Bitso.TextAppearance.Title">
+        <item name="android:fontFamily">@font/quicksand_medium</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Bitso.TextAppearance.Title.SemiBold">
+        <item name="android:fontFamily">@font/quicksand_semi_bold</item>
+    </style>
+
+    <style name="Bitso.TextAppearance.Book">
+        <item name="android:fontFamily">@font/rubik_medium</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+
 </resources>

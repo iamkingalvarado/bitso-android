@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Bitso</string>
-    <string name="act_available_books_error">Something went wrong, you can tap anywhere to retry</string>
+    <string name="act_available_books_error">Something went wrong, you can tap below to retry</string>
     <string name="act_available_books_retry">Retry</string>
+    <string name="act_book_detail_volume">volume</string>
+    <string name="act_book_detail_high">high</string>
+    <string name="act_book_detail_last">last</string>
+    <string name="act_book_detail_low">low</string>
+    <string name="act_book_detail_vwap">vwap</string>
+    <string name="act_book_detail_ask">ask</string>
+    <string name="act_book_detail_bid">bid</string>
 </resources>

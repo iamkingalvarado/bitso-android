@@ -20,6 +20,7 @@ class BooksUIMapper : Mapper<Book, BookUI>() {
 
     override fun map(from: Book): BookUI {
         return BookUI(
+            id = from.name,
             name = from.name.toUpperCase(Locale.getDefault()).replace('_', '/'),
             lastPrice = decimalFormat.format(from.lastPrice),
             date = from.createdAt?.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),

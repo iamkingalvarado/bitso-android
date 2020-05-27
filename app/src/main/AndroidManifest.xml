@@ -31,6 +31,11 @@
             android:name=".features.list.view.activities.AvailableBooksActivity"
             android:screenOrientation="userPortrait"
             tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name=".features.detail.view.activities.BookDetailActivity"
+            android:screenOrientation="userPortrait"
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ item_book_detail.xml - app
+  ~ Created by iamlordalvarado on 5/27/20 1:07 PM
+  ~ Copyright (c) 2020 . All rights reserved.
+  ~ Last modified 5/27/20 1:07 PM
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/marginNormal">
+
+    <TextView
+        android:id="@+id/itemBookDetailName"
+        style="@style/Bitso.TextAppearance.Body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/label50"
+        tools:text="Low" />
+
+    <TextView
+        android:id="@+id/itemBookDetailValue"
+        style="@style/Bitso.TextAppearance.Book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="145690" />
+</LinearLayout>
