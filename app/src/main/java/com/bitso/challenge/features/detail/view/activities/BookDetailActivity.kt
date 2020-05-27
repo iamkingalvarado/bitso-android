@@ -91,6 +91,9 @@ class BookDetailActivity : AppCompatActivity(), BookDetailView {
         errorRetryButton.setOnClickListener {
             bookDetailViewModel.loadBookInfo()
         }
+        bookDetailToolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
         bookDetailToolbar.title = bookDetail.name
         bookDetailRecyclerView.layoutManager = GridLayoutManager(this, 2)
         bookDetailRecyclerView.setHasFixedSize(false)
