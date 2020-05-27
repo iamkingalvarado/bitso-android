@@ -10,6 +10,7 @@ package com.bitso.challenge
 import android.app.Application
 import com.bitso.challenge.features.list.di.modules.AvailableBooksModule
 import com.bitso.challenge.features.splash.di.modules.SplashModule
+import com.bitso.challenge.network.di.modules.NetworkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
@@ -30,6 +31,7 @@ class App : Application() {
 
         loadKoinModules(
             arrayListOf(
+                NetworkModule.module(BuildConfig.API_URL, BuildConfig.DEBUG),
                 SplashModule.module,
                 AvailableBooksModule.module
             )

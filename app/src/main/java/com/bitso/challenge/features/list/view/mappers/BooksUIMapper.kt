@@ -10,20 +10,19 @@ package com.bitso.challenge.features.list.view.mappers
 import com.bitso.challenge.core.mapping.Mapper
 import com.bitso.challenge.features.list.domain.models.Book
 import com.bitso.challenge.features.list.view.models.BookUI
+import org.threeten.bp.format.DateTimeFormatter
 import java.text.DecimalFormat
-import java.text.SimpleDateFormat
 import java.util.*
 
 class BooksUIMapper : Mapper<Book, BookUI>() {
 
-    private val decimalFormat = DecimalFormat("#,###,##0.00")
-    private val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
+    private val decimalFormat = DecimalFormat("$#,###,##0.00000000")
 
     override fun map(from: Book): BookUI {
         return BookUI(
             name = from.name.toUpperCase(Locale.getDefault()).replace('_', '/'),
             lastPrice = decimalFormat.format(from.lastPrice),
-            date = dateFormat.format(from.createdAt),
+            date = from.createdAt?.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
             hexColor = getRandomColor()
         )
     }
