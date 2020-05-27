@@ -10,4 +10,5 @@
     <color name="systemFill">#FFFFFF</color>
     <color name="label">#00141E</color>
     <color name="label50">#8000141E</color>
+    <color name="bitsoBlack">#000</color>
 </resources>

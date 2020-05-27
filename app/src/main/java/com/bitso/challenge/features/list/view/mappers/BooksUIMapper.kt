@@ -23,7 +23,7 @@ class BooksUIMapper : Mapper<Book, BookUI>() {
             id = from.name,
             name = from.name.toUpperCase(Locale.getDefault()).replace('_', '/'),
             lastPrice = decimalFormat.format(from.lastPrice),
-            date = from.createdAt?.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
+            date = from.createdAt?.format(DateTimeFormatter.ISO_DATE_TIME),
             hexColor = getRandomColor()
         )
     }
